@@ -11,6 +11,10 @@
 #import "RKLog.h"
 #import "RKManagedObjectStore.h"
 
+// Preserve a retained global symbol so static library creation does not warn
+// that this category object file has no symbols under modern toolchains.
+__attribute__((used)) const char RKAdditionsTranslationUnitAnchor = 0;
+
 @implementation NSManagedObject (RKAdditions)
 
 - (BOOL)hasBeenDeleted
